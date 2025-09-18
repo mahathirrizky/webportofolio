@@ -10,7 +10,7 @@
 ![Screenshot](screenshots/ss.jpeg)
 
 
-Aplikasi web portofolio full-stack yang dibangun dengan backend Go (Gin) dan frontend Vue.js (Vite). Proyek ini mencakup panel admin untuk mengelola konten portofolio secara dinamis.
+Ini adalah aplikasi web portofolio full-stack yang dibuat pakai Go (Gin) untuk backend dan Vue.js (Vite) untuk frontend. Ada juga panel admin buat mengelola konten portofolio secara dinamis.
 
 ## 🌟 Fitur
 
@@ -22,7 +22,7 @@ Aplikasi web portofolio full-stack yang dibangun dengan backend Go (Gin) dan fro
   - Kelola konten (CRUD - Create, Read, Update, Delete).
   - Lihat dan hapus pesan dari pengunjung.
   - Unggah file/gambar.
-- **Penyajian Tunggal:** Server Go menyajikan build file frontend, menjadikannya aplikasi mandiri.
+- **Satu Paket:** Server Go langsung menyajikan file frontend yang sudah di-build, jadi aplikasinya bisa jalan sendiri.
 
 ## 🛠️ Tumpukan Teknologi
 
@@ -33,7 +33,7 @@ Aplikasi web portofolio full-stack yang dibangun dengan backend Go (Gin) dan fro
 
 ## 🚀 Memulai
 
-Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut.
+Mau coba proyek ini di komputer kamu? Ikuti langkah-langkah di bawah ini ya.
 
 ### Prasyarat
 
@@ -43,19 +43,21 @@ Untuk menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut.
 
 ### 1. Backend
 
-Kloning repositori:
+Kloning repositori ini:
 ```bash
 git clone https://github.com/mahathirrizky/webportofolio.git
 cd webportofolio
 ```
 
-Buat file `.env` di direktori root dan tambahkan variabel berikut. Ganti `your-secret-key` dengan kunci rahasia Anda.
+Bikin file `.env` di folder utama proyek, terus isi variabel ini.
+- `SECRET_KEY`: Ini adalah kunci rahasia yang dipakai untuk JWT (JSON Web Token) dan otentikasi admin. Ganti `your-secret-key` dengan string acak yang kuat ya.
+- `PORT`: Port tempat server Go akan berjalan.
 ```
-SECRET_KEY=your-secret-key
+SECRET_KEY=your-secret-key # Ganti dengan kunci rahasia yang kuat
 PORT=8080
 ```
 
-Jalankan server backend:
+Jalankan server backend-nya:
 ```bash
 go run main.go
 ```
@@ -63,55 +65,55 @@ Server akan berjalan di `http://localhost:8080`.
 
 ### 2. Frontend (untuk pengembangan)
 
-Buka terminal baru, masuk ke direktori `ui`:
+Buka terminal baru, terus masuk ke folder `ui`:
 ```bash
 cd ui
 ```
 
-Instal dependensi:
+Instal semua yang dibutuhkan (dependensi):
 ```bash
 npm install
 ```
 
-Jalankan server pengembangan frontend:
+Jalankan server frontend untuk pengembangan:
 ```bash
 npm run dev
 ```
-Aplikasi frontend akan dapat diakses di `http://localhost:5173` dan akan terhubung ke backend Go.
+Frontend-nya nanti bisa diakses di `http://localhost:5173` dan otomatis nyambung ke backend Go.
 
 ## 📦 Build untuk Produksi
 
-Untuk membuat build produksi dari aplikasi Vue dan menjalankannya dengan server Go:
+Kalau mau bikin versi produksi (siap pakai) dari aplikasi Vue dan menjalankannya bareng server Go:
 
 1.  **Build aplikasi Vue:**
     ```bash
     cd ui
     npm run build
     ```
-    Ini akan membuat direktori `dist` di dalam `ui`.
+    Nanti akan ada folder `dist` di dalam `ui`.
 
 2.  **Jalankan server Go:**
     Dari direktori root, jalankan:
     ```bash
     go run main.go
     ```
-    Server Go sekarang akan menyajikan file yang telah di-build dari `ui/dist`. Buka `http://localhost:8080` di browser Anda.
+    Server Go sekarang akan menyajikan file-file yang sudah di-build dari `ui/dist`. Buka `http://localhost:8080` di browser kamu ya.
 
 ## Endpoints API
 
 ### Rute Publik
-- `GET /api/content`: Mengambil semua konten publik.
-- `POST /api/messages`: Mengirim pesan baru (form kontak).
+- `GET /api/content`: Ambil semua konten yang bisa dilihat publik.
+- `POST /api/messages`: Kirim pesan baru (dari form kontak).
 
 ### Rute Admin (memerlukan token JWT)
-- `POST /api/auth/login`: Login untuk mendapatkan token.
-- `GET /api/admin/content`: Mengambil semua konten.
-- `POST /api/admin/content`: Membuat konten baru.
-- `PUT /api/admin/content/:id`: Memperbarui konten.
-- `DELETE /api/admin/content/:id`: Menghapus konten.
-- `POST /api/admin/upload`: Mengunggah file.
-- `GET /api/admin/messages`: Mengambil semua pesan.
-- `DELETE /api/admin/messages/:id`: Menghapus pesan.
+- `POST /api/auth/login`: Login buat dapat token.
+- `GET /api/admin/content`: Ambil semua konten.
+- `POST /api/admin/content`: Bikin konten baru.
+- `PUT /api/admin/content/:id`: Update konten.
+- `DELETE /api/admin/content/:id`: Hapus konten.
+- `POST /api/admin/upload`: Upload file.
+- `GET /api/admin/messages`: Ambil semua pesan.
+- `DELETE /api/admin/messages/:id`: Hapus pesan.
 
 ## ❤️ Dukungan
 
