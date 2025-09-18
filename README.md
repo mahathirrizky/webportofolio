@@ -5,6 +5,11 @@
 ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
+## 📸 Screenshot
+
+![Screenshot](screenshots/ss.jpeg)
+
+
 Aplikasi web portofolio full-stack yang dibangun dengan backend Go (Gin) dan frontend Vue.js (Vite). Proyek ini mencakup panel admin untuk mengelola konten portofolio secara dinamis.
 
 ## 🌟 Fitur
