@@ -113,6 +113,12 @@ Untuk membuat build produksi dari aplikasi Vue dan menjalankannya dengan server 
 - `GET /api/admin/messages`: Mengambil semua pesan.
 - `DELETE /api/admin/messages/:id`: Menghapus pesan.
 
+## ❤️ Dukungan
+
+Jika proyek ini berguna bagi Anda, pertimbangkan untuk mentraktir saya kopi!
+
+[![Buy Me a Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/mahathirrizky)
+
 ## 📄 Lisensi
 
 Proyek ini dilisensikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk detailnya.
